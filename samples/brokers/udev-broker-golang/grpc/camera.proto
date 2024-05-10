@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package camera;
+
+option go_package = "./camera";
+
+service Camera {
+  rpc GetFrame (NotifyRequest) returns ( NotifyResponse);
+}
+
+message NotifyRequest {}
+  
+message NotifyResponse {
+  bytes frame = 1;
+  string camera = 2;
+}
+  
